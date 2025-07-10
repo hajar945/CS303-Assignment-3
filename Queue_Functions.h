@@ -21,41 +21,42 @@ Queue<T>::Queue() {  // Default constructor
         front = rear = nullptr;
 }
 
-    template <typename T>
-    // Empty function to check if the queue is empty
-    bool Queue<T>::isEmpty() {
-        return front == nullptr;
-    }
+// Empty function to check if the queue is empty
+template <typename T>
+bool Queue<T>::isEmpty() {
+    return front == nullptr;
+}
 
-    template <typename T>
-    // Push function to add an element to the queue
-    void Queue<T>::push(T new_data) {
-        Node<T>* new_node = new Node(new_data);
-        if (isEmpty()) {
-            front = rear = new_node;
-            printQueue();
-            return;
-        }
-        rear->next = new_node;
-        rear = new_node;
+// Push function to add an element to the queue
+template <typename T>
+void Queue<T>::push(T new_data) {
+    Node<T>* new_node = new Node<T>(new_data);
+    if (isEmpty()) {
+        front = rear = new_node;
         printQueue();
+        return;
     }
-    template <typename T>
-    // Pop function to remove an element from the queue
-    void Queue<T>::pop() {
-        if (isEmpty()) {
-            return;
-        }
-        Node<T>* temp = front;
-        front = front->next;
-        if (front == nullptr) rear = nullptr;
-        delete temp;
-        printQueue();
-    }
-    template <typename T>
-    // Front function to return the front element of the queue
-    void Queue<T>::getfront() {
-        if (isEmpty()) {
+    rear->next = new_node;
+    rear = new_node;
+    printQueue();
+
+}
+// Pop function to remove an element from the queue
+template <typename T>
+void Queue<T>::pop() {
+    if (isEmpty()) {
+    return;
+}
+    Node<T>* temp = front;
+    front = front->next;
+    if (front == nullptr) rear = nullptr;
+    delete temp;
+    printQueue();
+}
+// Front function to return the front element of the queue
+template <typename T>
+void Queue<T>::getfront() {
+    if (isEmpty()) {
             cout << "\nQueue is empty" << endl;
             return;
         } return front->data;
