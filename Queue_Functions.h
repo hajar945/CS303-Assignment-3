@@ -1,43 +1,35 @@
-/*
-#include <iostream>
+#pragma once
+#ifndef QUEUE_FUNCTIONS_H
+#define QUEUE_FUNCTIONS_H
+
 #include "Queue.h"
+#include <iostream>
 
 using namespace std;
 
 
 //https://www.geeksforgeeks.org/dsa/queue-linked-list-implementation/#
-// Node class definition
+
 template <typename T>
-class Node {
-public:
-    T data;
-    Node<T>* next;
-    Node(T new_data) {
+Node <T>::Node(T new_data) {
         data = new_data;
         next = nullptr;
-    }
-};
+}
 
-
-// Queue class definition
 template <typename T>
-class Queue {
-private:
-    Node<T>* front;
-    Node<T>* rear;
-public:
-
-    Queue() {
+Queue<T>::Queue() {  // Default constructor
         front = rear = nullptr;
-    }
+}
+
     template <typename T>
     // Empty function to check if the queue is empty
-    bool isEmpty() {
+    bool Queue<T>::isEmpty() {
         return front == nullptr;
     }
+
     template <typename T>
     // Push function to add an element to the queue
-    void push(T new_data) {
+    void Queue<T>::push(T new_data) {
         Node<T>* new_node = new Node(new_data);
         if (isEmpty()) {
             front = rear = new_node;
@@ -50,7 +42,7 @@ public:
     }
     template <typename T>
     // Pop function to remove an element from the queue
-    void pop() {
+    void Queue<T>::pop() {
         if (isEmpty()) {
             return;
         }
@@ -62,7 +54,7 @@ public:
     }
     template <typename T>
     // Front function to return the front element of the queue
-    void getfront() {
+    void Queue<T>::getfront() {
         if (isEmpty()) {
             cout << "\nQueue is empty" << endl;
             return;
@@ -72,7 +64,7 @@ public:
 
     template <typename T>
     // Recursively count number of nodes in linked list
-    int size(Node<T>* front) { // https://www.geeksforgeeks.org/dsa/find-length-of-a-linked-list-iterative-and-recursive/
+    int Queue<T>::size(Node<T>* front) { // https://www.geeksforgeeks.org/dsa/find-length-of-a-linked-list-iterative-and-recursive/
 
         // Base Case
         if (front == NULL) {
@@ -85,7 +77,7 @@ public:
 
     template <typename T>
     // Function to print the current state of the queue
-    void printQueue() {
+    void Queue<T>::printQueue() {
         if (isEmpty()) {
             cout << "\nQueue is empty" << endl;
             return;
@@ -98,5 +90,7 @@ public:
         }
         cout << endl;
     }
-};
-*/
+
+
+
+#endif

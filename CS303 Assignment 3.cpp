@@ -16,13 +16,30 @@ the front of the queue to the rear of the queue. The element that was second in 
 be the new front element. Do this using functions push, front, and pop.*/
 
 #include <iostream>
+
+#include "Queue.h"
+#include "Queue_Functions.h"
+
 using namespace std;
 
-//https://www.geeksforgeeks.org/dsa/queue-linked-list-implementation/#
+
 
 
 
 int main()
 {
-    cout << "Hello World!\n";
+    cout << "------------ START OF PROGRAM ------------ \n";
+    Queue<char> q;
+	
+	cout << "Is queue empty? " << (q.isEmpty() ? "Yes" : "No") << endl;
+
+
+    q.push('B');
+	q.push('C');
+	q.push('D');
+
+	cout << "Is queue empty? " << (q.isEmpty() ? "Yes" : "No") << endl;
+
+        
+
 }
