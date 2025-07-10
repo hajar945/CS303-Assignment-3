@@ -23,7 +23,7 @@ Queue<T>::Queue() {  // Default constructor
 
 // Empty function to check if the queue is empty
 template <typename T>
-bool Queue<T>::isEmpty() {
+bool Queue<T>::isEmpty() const {
     return front == nullptr;
 }
 
@@ -55,12 +55,13 @@ void Queue<T>::pop() {
 }
 // Front function to return the front element of the queue
 template <typename T>
-void Queue<T>::getfront() {
+T Queue<T>::getfront() const {
     if (isEmpty()) {
             cout << "\nQueue is empty" << endl;
-            return;
-        } return front->data;
-    }
+            return 0;
+        } 
+    return front->data;
+}
 
 
     template <typename T>

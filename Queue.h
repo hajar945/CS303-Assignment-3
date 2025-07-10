@@ -25,7 +25,7 @@ public:
     Queue(); // Default constructor
 
     // Empty function to check if the queue is empty
-    bool isEmpty();
+    bool isEmpty() const;
 
     // Push function to add an element to the queue
     void push(T new_data);
@@ -34,9 +34,9 @@ public:
     void pop();
 
     // Front function to return the front element of the queue
-    void getfront();
+    T getfront() const;
 
-
+  
 
     // Recursively count number of nodes in linked list
     int size(Node<T>* front); // https://www.geeksforgeeks.org/dsa/find-length-of-a-linked-list-iterative-and-recursive/
