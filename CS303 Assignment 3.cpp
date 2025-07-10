@@ -6,7 +6,7 @@ Q1. (13 points) Implement the Queue data structure (you can use linked list or c
 for implementation) with x push(), x pop(), x front(), x size() and x empty() functions. The queue should
 be a template class (should work with any data type). Perform the following operations:
 
-a) Instantiate the queue with integers and push 10 values into the queue
+x a) Instantiate the queue with integers and push 10 values into the queue
 
 b) Display all the elements in a queue using just the queue functions mentioned above
 (push, pop, front, size etc.)
@@ -29,14 +29,23 @@ using namespace std;
 int main()
 {
     cout << "------------ START OF PROGRAM ------------ \n";
-    Queue<char> q;
+    Queue<int> q;
 	
 	cout << "Is queue empty? " << (q.isEmpty() ? "Yes" : "No") << endl;
 
+	q.push(1);
 
-    q.push('B');
-	q.push('C');
-	q.push('D');
+	cout << "Is queue empty? " << (q.isEmpty() ? "Yes" : "No") << endl;
+
+	q.push(2);
+	q.push(3);
+	q.push(4);
+	q.push(5);
+	q.push(6);
+	q.push(7);
+	q.push(8);
+	q.push(9);
+	q.push(10);
 
 	cout << "Is queue empty? " << (q.isEmpty() ? "Yes" : "No") << endl;
 

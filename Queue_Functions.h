@@ -38,9 +38,11 @@ void Queue<T>::push(T new_data) {
     }
     rear->next = new_node;
     rear = new_node;
-    printQueue();
+	cout << "\nAfter pushing " << new_data << ", the queue is: ";
+	printQueue();
 
 }
+
 // Pop function to remove an element from the queue
 template <typename T>
 void Queue<T>::pop() {
@@ -50,6 +52,8 @@ void Queue<T>::pop() {
     Node<T>* temp = front;
     front = front->next;
     if (front == nullptr) rear = nullptr;
+    
+    cout << "\nAfter popping " << temp->data << ", the queue is : ";
     delete temp;
     printQueue();
 }
@@ -97,7 +101,7 @@ T Queue<T>::getfront() const {
             return;
         }
         Node<T>* temp = front;
-        cout << "\nCurrent Queue: ";
+       
         while (temp != nullptr) {
             cout << temp->data << " ";
             temp = temp->next;
