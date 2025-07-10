@@ -31,11 +31,11 @@ int main()
     cout << "------------ START OF PROGRAM ------------ \n";
     Queue<int> q;
 	
-	cout << "Is queue empty? " << (q.isEmpty() ? "Yes" : "No") << endl;
+	cout << "\nIs queue empty? " << (q.isEmpty() ? "Yes" : "No") << endl;
 
 	q.push(1);
 
-	cout << "Is queue empty? " << (q.isEmpty() ? "Yes" : "No") << endl;
+	cout << "\nIs queue empty? " << (q.isEmpty() ? "Yes" : "No") << endl;
 
 	q.push(2);
 	q.push(3);

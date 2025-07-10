@@ -33,6 +33,7 @@ void Queue<T>::push(T new_data) {
     Node<T>* new_node = new Node<T>(new_data);
     if (isEmpty()) {
         front = rear = new_node;
+        cout << "\nAfter pushing " << new_data << ", the queue is: ";
         printQueue();
         return;
     }
