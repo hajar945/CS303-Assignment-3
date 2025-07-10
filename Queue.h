@@ -39,7 +39,7 @@ public:
   
 
     // Recursively count number of nodes in linked list
-    int size(Node<T>* front); // https://www.geeksforgeeks.org/dsa/find-length-of-a-linked-list-iterative-and-recursive/
+    int size() const; // https://www.geeksforgeeks.org/dsa/find-length-of-a-linked-list-iterative-and-recursive/
 
 
     // Function to print the current state of the queue

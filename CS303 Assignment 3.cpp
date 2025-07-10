@@ -3,7 +3,7 @@
 
 /*
 Q1. (13 points) Implement the Queue data structure (you can use linked list or circular array
-for implementation) with x push(), x pop(), front(), size() and empty() functions. The queue should
+for implementation) with x push(), x pop(), x front(), x size() and x empty() functions. The queue should
 be a template class (should work with any data type). Perform the following operations:
 
 a) Instantiate the queue with integers and push 10 values into the queue
@@ -42,5 +42,6 @@ int main()
 
 	q.pop();
 	cout << "\nThe front is " << q.getfront() << endl;
+	cout << "The size of the queue is " << q.size() << endl;
 
 }

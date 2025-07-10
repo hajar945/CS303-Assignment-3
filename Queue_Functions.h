@@ -65,17 +65,29 @@ T Queue<T>::getfront() const {
 
 
     template <typename T>
-    // Recursively count number of nodes in linked list
-    int Queue<T>::size(Node<T>* front) { // https://www.geeksforgeeks.org/dsa/find-length-of-a-linked-list-iterative-and-recursive/
+    // Itervatively count number of nodes in linked list
+    int Queue<T>::size() const { // https://www.geeksforgeeks.org/dsa/find-length-of-a-linked-list-iterative-and-recursive/
+        
+        // Initialize num_items with 0
+        int num_items = 0;
 
-        // Base Case
-        if (front == NULL) {
-            return 0;
+        // Initialize curr with head of Linked List
+        Node<T>* curr = front;
+
+        // Traverse till we reach nullptr
+        while (curr != nullptr) {
+
+            // Increment count by 1
+            num_items++;
+
+            // Move pointer to next node
+            curr = curr->next;
         }
 
-        // Count this node plus the rest of the list
-        return 1 + countNodes(front->next);
+        // Return the count of nodes
+        return num_items;
     }
+
 
     template <typename T>
     // Function to print the current state of the queue
