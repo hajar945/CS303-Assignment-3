@@ -93,6 +93,28 @@ T Queue<T>::getfront() const {
         return num_items;
     }
 
+    template <typename T>
+    void Queue<T>::move_to_rear() {
+        if (isEmpty()) {
+            cout << "\nQueue is empty, cannot move front to rear." << endl;
+            return;
+		}
+        else if (front == rear) {
+            cout << "\nzOnly one element in the queue, no need to move." << endl;
+            return;
+		}
+
+        T frontData = getfront();
+        pop();  // Remove the front element
+		cout << "frontData = " << frontData << endl;
+		push(frontData);  // Prepare to push it back to the rear
+		//front = front->next;  // Move front to the next element
+        
+        cout << "MOVE TO REAR QUEUE IS NOW\n";
+        printQueue();
+
+    }
+
 
     template <typename T>
     // Function to print the current state of the queue

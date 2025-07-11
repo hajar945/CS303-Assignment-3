@@ -8,7 +8,7 @@ be a template class (should work with any data type). Perform the following oper
 
 x a) Instantiate the queue with integers and push 10 values into the queue
 
-b) Display all the elements in a queue using just the queue functions mentioned above
+(?) b) Display all the elements in a queue using just the queue functions mentioned above
 (push, pop, front, size etc.)
 
 c) Write a new queue function called move_to_rear that moves the element currently at
@@ -32,8 +32,9 @@ int main()
     Queue<int> q;
 	
 	cout << "\nIs queue empty? " << (q.isEmpty() ? "Yes" : "No") << endl;
-
+	cout << "The size of the queue is " << q.size() << endl;
 	q.push(1);
+	cout << "The size of the queue is " << q.size() << endl;
 
 	cout << "\nIs queue empty? " << (q.isEmpty() ? "Yes" : "No") << endl;
 
@@ -52,5 +53,8 @@ int main()
 	q.pop();
 	cout << "\nThe front is " << q.getfront() << endl;
 	cout << "The size of the queue is " << q.size() << endl;
+	cout << "\n\n------------ MOVE TO REAR -------------------\n\n";
+	q.move_to_rear();
+
 
 }
