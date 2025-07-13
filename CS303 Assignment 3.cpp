@@ -11,7 +11,7 @@ x a) Instantiate the queue with integers and push 10 values into the queue
 (?) b) Display all the elements in a queue using just the queue functions mentioned above
 (push, pop, front, size etc.)
 
-c) Write a new queue function called move_to_rear that moves the element currently at
+x c) Write a new queue function called move_to_rear that moves the element currently at
 the front of the queue to the rear of the queue. The element that was second in line will
 be the new front element. Do this using functions push, front, and pop.*/
 

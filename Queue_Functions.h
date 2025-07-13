@@ -100,7 +100,7 @@ T Queue<T>::getfront() const {
             return;
 		}
         else if (front == rear) {
-            cout << "\nzOnly one element in the queue, no need to move." << endl;
+            cout << "\nOnly one element in the queue, no need to move." << endl;
             return;
 		}
 
