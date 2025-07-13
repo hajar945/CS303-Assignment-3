@@ -46,7 +46,7 @@ int main()
 	q.move_to_rear();
 
 	cout << "\n\n\n========== VECTOR SEARCH ===========\n";
-	vector<int> vec = { 2, 2, 3, 4, 5, 2, 4, 2 };
-	int key = 2;
-	int result = last_occurance(vec, key);
+	vector<string> vec = {"bus", "plane", "bus", "taxi", "bike", "plane"};
+	string target = "bus";
+	int result = last_occurance(vec, target);
 }

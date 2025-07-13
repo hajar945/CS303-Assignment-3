@@ -15,7 +15,7 @@ it in the slides Lecture 9 slide 30).
 
 
 template <typename T>
-T last_occurance(vector<T>& vec, T& target, size_t pos_last = - 1) {
+int last_occurance(vector<T>& vec, T& target, size_t pos_last = - 1) {
     if (pos_last == -1) {
 		pos_last = vec.size() - 1; // initialzing pos_last to the last index of the vector
     }
@@ -24,7 +24,7 @@ T last_occurance(vector<T>& vec, T& target, size_t pos_last = - 1) {
         return -1;
     }
     if (target == vec[pos_last]) {
-        cout << "The target " << target << " is at position " << pos_last << endl;
+        cout << "The target " << target << " last occurance is at position " << pos_last << endl;
         return pos_last;
     }
         else
