@@ -26,5 +26,8 @@
     <ClInclude Include="Queue_Functions.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
