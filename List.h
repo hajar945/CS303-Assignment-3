@@ -47,7 +47,6 @@ ListNode* insertion_sort(ListNode* head) {
 }
 
 //Print function
-
 void printlist(ListNode* head) {
 
     while (head != NULL)
