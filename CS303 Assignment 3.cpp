@@ -50,7 +50,7 @@ int main()
 	string target = "bus";
 	int result = last_occurance(vec, target);
 
-
+	cout << "\n\n\n~~~~~~~~~~~~ LINKED LIST INSERTION SORT ~~~~~~~~~~~~\n";
 	ListNode* first = new ListNode(30);
 	ListNode* second = new ListNode(3);
 	ListNode* third = new ListNode(4);
@@ -62,12 +62,10 @@ int main()
 	fourth->next = fifth;
 	//Linked list look like this: 30->3->4->20->5
 
-	cout << "Linked List before sorting" <<
-		endl;
+	cout << "Linked List before sorting" << endl;
 	printlist(first);
 	cout << endl;
 	ListNode* sorted = insertion_sort(first);
-	cout << "Linked List After sorting" <<
-		endl;
+	cout << "Linked List After sorting" << endl;
 	printlist(sorted);
 }
