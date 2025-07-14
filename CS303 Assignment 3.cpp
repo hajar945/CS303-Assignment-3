@@ -9,7 +9,7 @@
 #include "Queue.h"
 #include "Queue_Functions.h"
 #include "Vector.h"
-
+#include "List.h"
 using namespace std;
 
 
@@ -49,4 +49,25 @@ int main()
 	vector<string> vec = {"bus", "plane", "bus", "taxi", "bike", "plane"};
 	string target = "bus";
 	int result = last_occurance(vec, target);
+
+
+	ListNode* first = new ListNode(30);
+	ListNode* second = new ListNode(3);
+	ListNode* third = new ListNode(4);
+	ListNode* fourth = new ListNode(20);
+	ListNode* fifth = new ListNode(5);
+	first->next = second;
+	second->next = third;
+	third->next = fourth;
+	fourth->next = fifth;
+	//Linked list look like this: 30->3->4->20->5
+
+	cout << "Linked List before sorting" <<
+		endl;
+	printlist(first);
+	cout << endl;
+	ListNode* sorted = insertion_sort(first);
+	cout << "Linked List After sorting" <<
+		endl;
+	printlist(sorted);
 }

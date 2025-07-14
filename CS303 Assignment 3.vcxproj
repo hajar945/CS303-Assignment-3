@@ -126,6 +126,7 @@
     <ClCompile Include="CS303 Assignment 3.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="List.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Queue_Functions.h" />
     <ClInclude Include="Vector.h" />
