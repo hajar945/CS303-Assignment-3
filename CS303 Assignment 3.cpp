@@ -17,9 +17,9 @@ using namespace std;
 
 int main()
 {
-    cout << "------------ START OF PROGRAM ------------ \n";
-    Queue<int> q;
-	
+	cout << "------------ START OF PROGRAM ------------ \n";
+	Queue<int> q;
+
 	cout << "\nIs queue empty? " << (q.isEmpty() ? "Yes" : "No") << endl;
 	cout << "The size of the queue is " << q.size() << endl;
 	q.push(1);
@@ -45,27 +45,18 @@ int main()
 	cout << "\n\n------------ MOVE TO REAR -------------------\n\n";
 	q.move_to_rear();
 
+
+	cout << "\n\n\n---- new printing queue ----\n";
+	q.print_queue();
+
+
+
+
 	cout << "\n\n\n========== VECTOR SEARCH ===========\n";
-	vector<string> vec = {"bus", "plane", "bus", "taxi", "bike", "plane"};
+	vector<string> vec = { "bus", "plane", "bus", "taxi", "bike", "plane" };
 	string target = "bus";
 	int result = last_occurance(vec, target);
 
 	cout << "\n\n\n~~~~~~~~~~~~ LINKED LIST INSERTION SORT ~~~~~~~~~~~~\n";
-	ListNode* first = new ListNode(30);
-	ListNode* second = new ListNode(3);
-	ListNode* third = new ListNode(4);
-	ListNode* fourth = new ListNode(20);
-	ListNode* fifth = new ListNode(5);
-	first->next = second;
-	second->next = third;
-	third->next = fourth;
-	fourth->next = fifth;
-	//Linked list look like this: 30->3->4->20->5
-
-	cout << "Linked List before sorting" << endl;
-	printlist(first);
-	cout << endl;
-	ListNode* sorted = insertion_sort(first);
-	cout << "Linked List After sorting" << endl;
-	printlist(sorted);
 }
+

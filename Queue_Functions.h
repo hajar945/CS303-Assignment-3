@@ -21,6 +21,24 @@ Queue<T>::Queue() {  // Default constructor
         front = rear = nullptr;
 }
 
+template <typename T>
+Queue<T>::Queue(const Queue<T>& other) { // Deep copy constructor
+    front = rear = nullptr;
+    Node<T>* curr = other.front;
+    while (curr != nullptr) {
+        Node<T>* new_node = new Node<T>(curr->data);
+        if (rear == nullptr) { // queue is empty
+            front = rear = new_node;
+        }
+        else {
+            rear->next = new_node;
+            rear = new_node;
+        }
+        curr = curr->next;
+    }
+}
+
+
 // Empty function to check if the queue is empty
 template <typename T>
 bool Queue<T>::isEmpty() const {
@@ -34,13 +52,13 @@ void Queue<T>::push(T new_data) {
     if (isEmpty()) {
         front = rear = new_node;
         cout << "\nAfter pushing " << new_data << ", the queue is: ";
-        printQueue();
+        print_queue();
         return;
     }
     rear->next = new_node;
     rear = new_node;
 	cout << "\nAfter pushing " << new_data << ", the queue is: ";
-	printQueue();
+    print_queue();
 
 }
 
@@ -54,9 +72,9 @@ void Queue<T>::pop() {
     front = front->next;
     if (front == nullptr) rear = nullptr;
     
-    cout << "\nAfter popping " << temp->data << ", the queue is : ";
+   // cout << "\nAfter popping " << temp->data << ", the queue is : ";
     delete temp;
-    printQueue();
+   // print_queue();
 }
 // Front function to return the front element of the queue
 template <typename T>
@@ -76,19 +94,15 @@ T Queue<T>::getfront() const {
         // Initialize num_items with 0
         int num_items = 0;
 
-        // Initialize curr with head of Linked List
-        Node<T>* curr = front;
+        Queue<T> tempQueue = *this; // Make a copy to print the queue without changing the original queue
 
-        // Traverse till we reach nullptr
-        while (curr != nullptr) {
-
-            // Increment count by 1
+        while (!tempQueue.isEmpty())
+        {
+            T frontcopy = tempQueue.getfront();
             num_items++;
-
-            // Move pointer to next node
-            curr = curr->next;
+            tempQueue.pop();
         }
-
+        cout << endl;
         // Return the count of nodes
         return num_items;
     }
@@ -108,28 +122,29 @@ T Queue<T>::getfront() const {
         pop();  // Remove the front element
 		cout << "frontData = " << frontData << endl;
 		push(frontData);  // Prepare to push it back to the rear
-		//front = front->next;  // Move front to the next element
+		
         
         cout << "MOVE TO REAR QUEUE IS NOW\n";
-        printQueue();
+        print_queue();
 
     }
 
 
-    template <typename T>
-    // Function to print the current state of the queue
-    void Queue<T>::printQueue() {
-        if (isEmpty()) {
-            cout << "\nQueue is empty" << endl;
-            return;
-        }
-        Node<T>* temp = front;
-       
-        while (temp != nullptr) {
-            cout << temp->data << " ";
-            temp = temp->next;
+
+
+    template <typename T> // https://stackoverflow.com/questions/22280318/how-do-i-print-a-queue
+    void Queue<T>::print_queue()
+    {
+        Queue<T> tempQueue = *this; // Make a copy to print the queue without changing the original queue
+
+        while (!tempQueue.isEmpty())
+        {
+			T frontcopy = tempQueue.getfront();
+            cout << frontcopy << " ";
+            tempQueue.pop();
         }
         cout << endl;
+
     }
 
 

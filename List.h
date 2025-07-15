@@ -36,28 +36,6 @@ using namespace std;
 
 
 // https://www.geeksforgeeks.org/dsa/cpp-program-for-insertion-sort-in-a-singly-linked-list/#
-// Definition for singly-linked list.
 
-struct ListNode {
-	int val;
-	ListNode* next;
-	ListNode() : val(0), next(nullptr) {}
-	ListNode(int x) : val(x), next(nullptr) {}
-	ListNode(int x, ListNode* next) : val(x), next(next) {}
-};
-
-
-
-
-//Print function
-void printlist(ListNode* head) {
-
-    while (head != NULL)
-    {
-        cout << head->val << " ";
-        head = head->next;
-    }
-    cout << endl;
-}
 
 #endif
