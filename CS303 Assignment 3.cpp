@@ -65,5 +65,8 @@ int main()
 	int result = last_occurance(vec, target);
 
 	cout << "\n\n\n~~~~~~~~~~~~ LINKED LIST INSERTION SORT ~~~~~~~~~~~~\n";
+
+
+
 }
 
