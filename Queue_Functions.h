@@ -51,14 +51,14 @@ void Queue<T>::push(T new_data) {
     Node<T>* new_node = new Node<T>(new_data);
     if (isEmpty()) {
         front = rear = new_node;
-        cout << "\nAfter pushing " << new_data << ", the queue is: ";
-        print_queue();
+		cout << endl << new_data << " has been pushed to the queue\n";
+        
         return;
     }
     rear->next = new_node;
     rear = new_node;
-	cout << "\nAfter pushing " << new_data << ", the queue is: ";
-    print_queue();
+    cout << endl << new_data << " has been pushed to the queue\n";
+    
 
 }
 
@@ -69,12 +69,14 @@ void Queue<T>::pop() {
     return;
 }
     Node<T>* temp = front;
+    T popped_value = temp->data; 
     front = front->next;
     if (front == nullptr) rear = nullptr;
     
-   // cout << "\nAfter popping " << temp->data << ", the queue is : ";
     delete temp;
-   // print_queue();
+
+    
+    
 }
 // Front function to return the front element of the queue
 template <typename T>
@@ -120,12 +122,10 @@ T Queue<T>::getfront() const {
 
         T frontData = getfront();
         pop();  // Remove the front element
-		cout << "frontData = " << frontData << endl;
+		cout << "Front element = " << frontData << endl;
 		push(frontData);  // Prepare to push it back to the rear
 		
-        
-        cout << "MOVE TO REAR QUEUE IS NOW\n";
-        print_queue();
+ 
 
     }
 
