@@ -47,24 +47,7 @@ struct ListNode {
 };
 
 
-ListNode* insertion_sort(ListNode* head) {
-    if (!head || !head->next)return head;
-    ListNode* dummy = new ListNode(INT_MIN);
-    while (head)
-    {
-        ListNode* curr = dummy, * prev = nullptr;
-        while (curr && curr->val <= head->val)
-        {
-            prev = curr;
-            curr = curr->next;
-        }
-        ListNode* next = head->next;
-        prev->next = head;
-        head->next = curr;
-        head = next;
-    }
-    return dummy->next;
-}
+
 
 //Print function
 void printlist(ListNode* head) {
