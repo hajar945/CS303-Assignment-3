@@ -9,46 +9,47 @@ list or you can also use queue) of integers (You
 can find the source code on lecture 10 slide 138).
 */
 
-#include <queue>
+#include <list>
 #include <iostream>
 using namespace std;
 
-// Function to sort the queue in ascending order
-void sort_queue_asc() {
-	int i, j, temp;
-	int n = back - front + 1; // Calculate the number of elements in the queue
+void insertion_sort(list<int>& num) {
+    auto j = num.begin();
+    ++j; // OG: j = 1; --> advance to second element
+	// no iniiialization of j because j is already assigned to the second element of the list
+    for (; j != num.end(); ++j) { // OG: for (j = 1; j < num.size(); j++)
+        int key = *j; // OG: key = num[j];
+        bool insertionNeeded = false; // OG: insertionNeeded = false;
 
-	for (i = 0; i < n - 1; i++) { // Iterate through the queue elements
-		for (j = i + 1; j < n; j++) { // Iterate through the remaining elements
-			if (queue[i] > queue[j]) { // Compare adjacent elements
-				temp = queue[i]; // Swap elements if out of order
-				queue[i] = queue[j];
-				queue[j] = temp;
-			}
-		}
-	}
+        auto i = num.begin(); // OG: i = j - 1 --> start from begin()
+
+        // OG: for (i = j-1; i >= 0; i--)
+        // Here, we loop from begin() up to j
+        while (i != j) {
+            if (key < *i) { // OG: if (key < num[i])
+                insertionNeeded = true; // OG: insertionNeeded = true;
+                break; // OG: break;
+            }
+            ++i; // OG: continue i-- loop (but here advancing forward)
+        }
+
+        if (insertionNeeded) { // OG: if (insertionNeeded)
+            auto curr = j; // store current node (equivalent to using num[j])
+            ++j; // advance j early since erase below invalidates curr
+
+            num.insert(i, key); // OG: num[i + 1] = key; (insert key before i)
+
+            num.erase(curr); // remove original curr (equivalent to shifting elements and inserting key)
+
+            --j; // adjust j back to point to correct next node after erase/insert
+        }
+    }
+    // Print the sorted list
+    cout << "Sorted list: ";
+    for (const auto& val : num) {
+        cout << val << " ";
+    }
+    cout << endl;
 }
-
-
-void insertion_sort(queue<int>& que) {
-	int i, j, temp;
-	bool insertionNeeded = false;
-	for (j = 1; j < que.size(); j++) { // Iterate through the queue elements
-		insertionNeeded = false;
-		for (i = j - 1; i >= 0; i--) {
-			if (temp < que[i]) {
-				temp = que[j];
-				que[i + 1] = que[i]; // larger values move right
-				insertionNeeded = true;
-			}
-			else
-				break;
-		}
-		if (insertionNeeded)
-			que[i + 1] = temp; //Put temp into its proper location
-	}
-}
-// https://www.geeksforgeeks.org/dsa/cpp-program-for-insertion-sort-in-a-singly-linked-list/#
-
 
 #endif
