@@ -24,7 +24,7 @@ void insertion_sort(list<int>& num) {
         auto i = num.begin(); // OG: i = j - 1 --> start from begin()
 
         // OG: for (i = j-1; i >= 0; i--)
-        // Here, we loop from begin() up to j
+        // loop from begin() up to j
         while (i != j) {
             if (key < *i) { // OG: if (key < num[i])
                 insertionNeeded = true; // OG: insertionNeeded = true;
@@ -46,7 +46,7 @@ void insertion_sort(list<int>& num) {
     }
     // Print the sorted list
     cout << "Sorted list: ";
-    for (const auto& val : num) {
+    for (const int& val : num) {
         cout << val << " ";
     }
     cout << endl;
