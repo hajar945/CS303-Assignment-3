@@ -29,5 +29,8 @@
     <ClInclude Include="Vector.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="List.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

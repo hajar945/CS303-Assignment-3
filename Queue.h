@@ -24,6 +24,8 @@ private:
 public:
     Queue(); // Default constructor
 
+    Queue(const Queue<T>& other); // Deep copy constructor
+
     // Empty function to check if the queue is empty
     bool isEmpty() const;
 
@@ -36,7 +38,7 @@ public:
     // Front function to return the front element of the queue
     T getfront() const;
 
-  
+
 
     // Iteratively count number of nodes in linked list
     int size() const; // https://www.geeksforgeeks.org/dsa/find-length-of-a-linked-list-iterative-and-recursive/
@@ -46,7 +48,9 @@ public:
     void move_to_rear();
 
     // Function to print the current state of the queue
-    void printQueue();
+
+
+    void print_queue();
 };
 
 
