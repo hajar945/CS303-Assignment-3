@@ -7,11 +7,12 @@
 using namespace std;
 
 
+
+
 int main()
 {
-    cout << "------------ START OF PROGRAM ------------ \n";
-    Queue<int> q;
-	
+	Queue<int> q;
+
 	cout << "\nIs queue empty? " << (q.isEmpty() ? "Yes" : "No") << endl;
 	cout << "The size of the queue is " << q.size() << endl;
 	q.push(1);
@@ -38,12 +39,28 @@ int main()
 	cout << "After popping, the queue is: "; q.print_queue();
 
 	cout << "\nThe front is " << q.getfront() << endl;
-	cout << "The size of the queue is " << q.size() << endl;
-	
-	q.move_to_rear();
+	cout << "\nThe size of the queue is " << q.size() << endl;
 
-	cout << "\n\n\n========== VECTOR SEARCH ===========\n";
-	vector<string> vec = {"bus", "plane", "bus", "taxi", "bike", "plane"};
+	q.move_to_rear();
+	cout << "\nAfter moving front item to rear, queue is: \n";
+	q.print_queue();
+
+
+	
+	vector<string> vec = { "bus", "plane", "bus", "taxi", "bike", "plane" };
 	string target = "bus";
 	int result = last_occurance(vec, target);
+
+	
+	list<int> num;
+	num.push_back(5);
+	num.push_back(3);
+	num.push_back(10);
+	num.push_back(1);
+	num.push_back(7);
+
+
+	cout << endl;
+	insertion_sort(num);
+
 }

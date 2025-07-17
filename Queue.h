@@ -4,6 +4,7 @@
 
 #include <iostream>
 using namespace std;
+
 //https://www.geeksforgeeks.org/dsa/queue-linked-list-implementation/#
 // Node class definition
 template <typename T>
@@ -48,7 +49,9 @@ public:
     void move_to_rear();
 
     // Function to print the current state of the queue
-    void printQueue();
+
+
+    void print_queue();
 };
 
 
