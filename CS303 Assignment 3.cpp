@@ -1,9 +1,3 @@
-// CS303 Assignment 3.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-/*
-
-
-*/
 #include <iostream>
 #include <vector>
 #include "Queue.h"
@@ -13,11 +7,9 @@
 using namespace std;
 
 
-
-
 int main()
 {
-	cout << "------------ START OF PROGRAM ------------ \n";
+	
 	Queue<int> q;
 
 	cout << "\nIs queue empty? " << (q.isEmpty() ? "Yes" : "No") << endl;
@@ -47,25 +39,26 @@ int main()
 
 	cout << "\nThe front is " << q.getfront() << endl;
 	cout << "The size of the queue is " << q.size() << endl;
-	cout << "\n\n------------ MOVE TO REAR -------------------\n\n";
+	
 	q.move_to_rear();
-	cout << "MOVE TO REAR QUEUE IS NOW\n";
+	cout << "\n\nAfter moving front item to rear, the queue is: \n";
 	q.print_queue();
 
 
-	cout << "\n\n\n---- new printing queue ----\n";
-	q.print_queue();
-
-
-
-
-	cout << "\n\n\n========== VECTOR SEARCH ===========\n";
 	vector<string> vec = { "bus", "plane", "bus", "taxi", "bike", "plane" };
 	string target = "bus";
 	int result = last_occurance(vec, target);
 
-	cout << "\n\n\n~~~~~~~~~~~~ LINKED LIST INSERTION SORT ~~~~~~~~~~~~\n";
+	
+	list<int> num;
+	num.push_back(5);
+	num.push_back(3);
+	num.push_back(10);
+	num.push_back(1);
+	num.push_back(7);
 
-
+	
+	cout << endl;
+	insertion_sort(num);
 
 }

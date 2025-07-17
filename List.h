@@ -3,47 +3,52 @@
 #define LIST_H
 /*
 
- Q3. (7 points) Modify the source code for the
+Modify the source code for the
 insertion sort so that it can sort a list (linked
-list or you can also use queue) of integers (You
-can find the source code on lecture 10 slide 138).
+list or you can also use queue) of integers
 */
 
-#include <queue>
+#include <list>
 #include <iostream>
 using namespace std;
 
-// Function to sort the queue in ascending order
-void sort_queue_asc() {
-	int i, j, temp;
-	int n = back - front + 1; // Calculate the number of elements in the queue
+void insertion_sort(list<int>& num) {
+    auto j = num.begin();
+    ++j; // equivalent to: j = 1; --> advance to second element
+    // no iniiialization of j because j is already assigned to the second element of the list
+    for (; j != num.end(); ++j) { // equivalent to: for (j = 1; j < num.size(); j++)
+        int key = *j; // equivalent to: key = num[j];
+        bool insertionNeeded = false; 
 
-	for (i = 0; i < n - 1; i++) { // Iterate through the queue elements
-		for (j = i + 1; j < n; j++) { // Iterate through the remaining elements
-			if (queue[i] > queue[j]) { // Compare adjacent elements
-				temp = queue[i]; // Swap elements if out of order
-				queue[i] = queue[j];
-				queue[j] = temp;
-			}
-		}
-	}
+        auto i = num.begin(); // equivalent to: i = j - 1 --> start from begin()
+
+        // equivalent to: for (i = j-1; i >= 0; i--)
+        // loop from begin() up to j
+        while (i != j) {
+            if (key < *i) { // equivalent to: if (key < num[i])
+                insertionNeeded = true; 
+                break; 
+            }
+            ++i; // equivalent to: continue i-- loop (but here advancing forward)
+        }
+
+        if (insertionNeeded) { // equivalent to: if (insertionNeeded)
+            auto curr = j; // store current node (equivalent to using num[j])
+            ++j; // advance j early since erase below invalidates curr
+
+            num.insert(i, key); // equivalent to: num[i + 1] = key; (insert key before i)
+
+            num.erase(curr); // remove original curr (equivalent to shifting elements and inserting key)
+
+            --j; // adjust j back to point to the correct next node after erase/insert
+        }
+    }
+    // print the sorted list
+    cout << "Sorted list: ";
+    for (const int& val : num) {
+        cout << val << " ";
+    }
+    cout << endl;
 }
-void insertion_sort(queue <int>& num) {
-	int i, j, key;
-	bool insertionNeeded = false;
-	for (j = 1; j < num.size(); j++) {
-		key = num[j];
-		insertionNeeded = false;
-		for (i = j - 1; i >= 0; i--) {
-			if (key < num[i]) {
-				num[i + 1] = num[i]; // larger values move right
-				insertionNeeded = true;
-			}
-			else
-				break;
-		}
-		if (insertionNeeded)
-			num[i + 1] = key; //Put key into its proper location
-	}
-}
+
 #endif
