@@ -48,9 +48,7 @@ public:
     void move_to_rear();
 
     // Function to print the current state of the queue
-
-
-    void print_queue();
+    void printQueue();
 };
 
 

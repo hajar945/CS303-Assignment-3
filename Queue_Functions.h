@@ -69,7 +69,6 @@ void Queue<T>::pop() {
         return;
     }
     Node<T>* temp = front;
-    T popped_value = temp->data;
     front = front->next;
     if (front == nullptr) rear = nullptr;
 
@@ -130,6 +129,22 @@ void Queue<T>::move_to_rear() {
 }
 
 
+
+
+    template <typename T> // https://stackoverflow.com/questions/22280318/how-do-i-print-a-queue
+    void Queue<T>::print_queue()
+    {
+        Queue<T> tempQueue = *this; // Make a copy to print the queue without changing the original queue
+
+        while (!tempQueue.isEmpty())
+        {
+			T frontcopy = tempQueue.getfront();
+            cout << frontcopy << " ";
+            tempQueue.pop();
+        }
+        cout << endl;
+
+    }
 
 
 template <typename T> // https://stackoverflow.com/questions/22280318/how-do-i-print-a-queue
